@@ -6,6 +6,7 @@ import ai from "../configs/ai.js";
 
 
 export const enhanceProfessionalSummary = async (req, res) => {
+    const userContent = req.body?.userContent
     try {
         const { userContent } = req.body;
         if (!userContent) {
