@@ -6,11 +6,16 @@ import ai from "../configs/ai.js";
 
 
 export const enhanceProfessionalSummary = async (req, res) => {
+<<<<<<< HEAD
     console.log("REQ BODY:", req.body) 
 
     const userContent = req.body?.userContent  // 👈 safe access
 
     console.log("userContent:", userContent) 
+=======
+    const userContent = req.body?.userContent
+    console.log("userContent:", userContent)
+>>>>>>> 6d906db17324f8ea8dca84723117d3b782a0b5cb
     try {
         if (!userContent) {
             return res.status(400).json({message: 'Missing required fields'});
