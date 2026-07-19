@@ -6,11 +6,18 @@ import ai from "../configs/ai.js";
 
 
 export const enhanceProfessionalSummary = async (req, res) => {
+    console.log("REQ BODY:", req.body) 
+
+    const userContent = req.body?.userContent  // 👈 safe access
+
+    console.log("userContent:", userContent) 
     try {
-        const { userContent } = req.body;
         if (!userContent) {
             return res.status(400).json({message: 'Missing required fields'});
         }
+        console.log("API KEY:", process.env.OPENAI_API_KEY)
+console.log("MODEL:", process.env.OPENAI_MODEL)
+console.log("BASE URL:", process.env.OPENAI_BASE_URL)
      const response =   await ai.chat.completions.create({
             model: process.env.OPENAI_MODEL,
             messages: [
@@ -27,7 +34,6 @@ export const enhanceProfessionalSummary = async (req, res) => {
         return res.status(200).json({ enhancedContent})
     
       }  catch (error) {
-
         return res.status(500).json({ message:error.message})
 
         }

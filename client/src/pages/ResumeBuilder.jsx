@@ -123,6 +123,7 @@ const downloadResume = () => {
 const saveResume = async () => {
   
   try {
+    
     let updateResumeData = structuredClone(resumeData)
     
     

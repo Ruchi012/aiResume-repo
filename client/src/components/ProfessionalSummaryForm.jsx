@@ -10,6 +10,9 @@ const ProfessionalSummaryForm = ({data, onChange, setResumeData}) => {
   const [isGenerating, setIsGenerating] = useState(false)
 
    const generateSummary = async () => {
+     console.log("token:", token)
+  console.log("data:", data)
+  console.log("payload:", { userContent: `enhance my professional summary "${data}"` })
     try {
         setIsGenerating(true)
         const prompt= `enhance my professional summary "${data}" `;

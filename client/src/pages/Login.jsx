@@ -29,6 +29,7 @@ const Login = () => {
             : formData
 
         const  { data } =  await api.post(`/api/users/${state}`, payload)
+        
         dispatch(login(data))
         localStorage.setItem('token', data.token)
         toast.success(data.message)
